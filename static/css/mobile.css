@@ -1,0 +1,117 @@
+@media (max-width: 700px) {
+
+    .topbar {
+        height: 64px;
+        padding: 0 18px;
+    }
+
+    .brand-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .brand-name {
+        font-size: 11px;
+    }
+
+    .brand-sub {
+        font-size: 7px;
+    }
+
+    .connection {
+        font-size: 8px;
+    }
+
+    .app-container {
+        width: 92%;
+        padding-top: 38px;
+    }
+
+    .status-section h1 {
+        font-size: 30px;
+        line-height: 1.05;
+    }
+
+    .status-section p {
+        font-size: 12px;
+        margin-bottom: 25px;
+    }
+
+    .radar-section {
+        margin: 38px 0;
+    }
+
+    .radar {
+        width: 190px;
+        height: 190px;
+    }
+
+    .diagnostics {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .diagnostic-card {
+        padding: 14px 10px;
+        border-radius: 11px;
+        gap: 9px;
+    }
+
+    .card-icon {
+        font-size: 16px;
+    }
+
+    .card-content span {
+        font-size: 7px;
+    }
+
+    .card-content strong {
+        font-size: 8px;
+    }
+
+    .terminal {
+        font-size: 9px;
+        min-height: 150px;
+    }
+
+    .start-card {
+        padding: 35px 22px;
+    }
+
+    .simulation-content {
+        padding: 25px 18px;
+    }
+
+    .final-content h1 {
+        font-size: 52px;
+        letter-spacing: -2px;
+    }
+
+    .final-check {
+        width: 65px;
+        height: 65px;
+        font-size: 30px;
+    }
+}
+
+
+@media (max-width: 360px) {
+
+    .diagnostic-card {
+        padding: 11px 8px;
+    }
+
+    .card-content span {
+        font-size: 6px;
+    }
+
+    .card-content strong {
+        font-size: 7px;
+    }
+
+    .radar {
+        width: 165px;
+        height: 165px;
+    }
+
+}

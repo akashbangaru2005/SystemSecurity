@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <meta name="theme-color" content="#05070a">
+
+    <title>SecureCore — Device Security</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/main.css') }}"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/mobile.css') }}"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/animations.css') }}"
+    >
+</head>
+
+<body>
+
+<!-- =========================================
+     BACKGROUND
+========================================= -->
+
+<div class="background-grid"></div>
+<div class="scanline"></div>
+<div class="particles" id="particles"></div>
+
+
+<!-- =========================================
+     TOP BAR
+========================================= -->
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            S
+        </div>
+
+        <div>
+            <div class="brand-name">
+                SECURECORE
+            </div>
+
+            <div class="brand-sub">
+                DEVICE SECURITY SYSTEM
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="connection">
+
+        <span class="connection-dot"></span>
+
+        SECURE
+
+    </div>
+
+</header>
+
+
+<!-- =========================================
+     MAIN APPLICATION
+========================================= -->
+
+<main class="app-container">
+
+
+    <!-- =====================================
+         SYSTEM STATUS
+    ====================================== -->
+
+    <section class="status-section">
+
+        <div class="status-label">
+            SYSTEM STATUS
+        </div>
+
+
+        <h1 id="mainTitle">
+            Initializing Security Scan
+        </h1>
+
+
+        <p id="mainDescription">
+            Preparing secure diagnostic environment...
+        </p>
+
+
+        <!-- PROGRESS -->
+
+        <div class="progress-wrapper">
+
+            <div class="progress-info">
+
+                <span id="progressText">
+                    INITIALIZING
+                </span>
+
+                <span id="progressPercent">
+                    0%
+                </span>
+
+            </div>
+
+
+            <div class="progress-bar">
+
+                <div
+                    id="progressFill"
+                    class="progress-fill"
+                ></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         RADAR
+    ====================================== -->
+
+    <section class="radar-section">
+
+        <div class="radar">
+
+            <div class="radar-ring ring-one"></div>
+
+            <div class="radar-ring ring-two"></div>
+
+            <div class="radar-ring ring-three"></div>
+
+
+            <div class="radar-cross horizontal"></div>
+
+            <div class="radar-cross vertical"></div>
+
+
+            <div class="radar-sweep"></div>
+
+
+            <div class="radar-center">
+
+                <div class="center-dot"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="radar-status">
+
+            <span class="pulse-dot"></span>
+
+            ANALYZING ENVIRONMENT
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         DIAGNOSTICS
+    ====================================== -->
+
+    <section class="diagnostics">
+
+
+        <!-- MEMORY -->
+
+        <div class="diagnostic-card">
+
+            <div class="card-icon">
+                ◉
+            </div>
+
+            <div class="card-content">
+
+                <span>
+                    MEMORY INTEGRITY
+                </span>
+
+                <strong id="memoryStatus">
+                    WAITING
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- NETWORK -->
+
+        <div class="diagnostic-card">
+
+            <div class="card-icon">
+                ⌁
+            </div>
+
+            <div class="card-content">
+
+                <span>
+                    NETWORK ANALYSIS
+                </span>
+
+                <strong id="networkStatus">
+                    WAITING
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- SYSTEM SERVICES -->
+
+        <div class="diagnostic-card">
+
+            <div class="card-icon">
+                ◇
+            </div>
+
+            <div class="card-content">
+
+                <span>
+                    SYSTEM SERVICES
+                </span>
+
+                <strong id="serviceStatus">
+                    WAITING
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- SECURITY -->
+
+        <div class="diagnostic-card">
+
+            <div class="card-icon">
+                ◆
+            </div>
+
+            <div class="card-content">
+
+                <span>
+                    SECURITY CORE
+                </span>
+
+                <strong id="securityStatus">
+                    WAITING
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         LIVE SECURITY LOG
+    ====================================== -->
+
+    <section class="log-section">
+
+        <div class="section-title">
+            LIVE SECURITY LOG
+        </div>
+
+
+        <div
+            class="terminal"
+            id="terminal"
+        ></div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================================
+     START OVERLAY
+========================================= -->
+
+<div
+    id="startOverlay"
+    class="start-overlay"
+>
+
+    <div class="start-card">
+
+
+        <div class="start-logo">
+            S
+        </div>
+
+
+        <h2>
+            SECURECORE
+        </h2>
+
+
+        <p>
+            Advanced Device Security Environment
+        </p>
+
+
+        <button
+            id="startButton"
+            class="start-button"
+        >
+            START SECURITY SCAN
+        </button>
+
+
+        <small>
+            Browser-based security simulation
+        </small>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================
+     SECURITY SIMULATION MODAL
+========================================= -->
+
+<div
+    id="simulationModal"
+    class="simulation-modal hidden"
+>
+
+    <div class="simulation-card">
+
+
+        <div class="simulation-header">
+
+            <span id="simulationIcon">
+                ◉
+            </span>
+
+            <span id="simulationTitle">
+                SECURITY EVENT
+            </span>
+
+        </div>
+
+
+        <div
+            id="simulationContent"
+            class="simulation-content"
+        ></div>
+
+
+        <div class="simulation-progress">
+
+            <div
+                id="simulationProgress"
+            ></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script
+    src="{{ url_for('static', filename='js/audio.js') }}"
+></script>
+
+
+<script
+    src="{{ url_for('static', filename='js/effects.js') }}"
+></script>
+
+
+<script
+    src="{{ url_for('static', filename='js/prank.js') }}"
+></script>
+
+
+<script
+    src="{{ url_for('static', filename='js/app.js') }}"
+></script>
+
+
+</body>
+</html>
+
